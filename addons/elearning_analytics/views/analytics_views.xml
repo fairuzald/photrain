@@ -8,7 +8,14 @@
         <field name="course_id"/>
         <field name="total_students"/>
         <field name="completion_rate"/>
+        <field name="dropout_rate"/>
         <field name="average_score"/>
+        <field name="score_std_dev"/>
+        <field name="pass_rate"/>
+        <field name="average_attempts_per_quiz"/>
+        <field name="median_completion_time"/>
+        <field name="completion_time_std_dev"/>
+        <field name="top_10_percentile_score"/>
       </tree>
     </field>
   </record>
@@ -24,7 +31,14 @@
             <field name="course_id"/>
             <field name="total_students" readonly="1"/>
             <field name="completion_rate" readonly="1"/>
+            <field name="dropout_rate" readonly="1"/>
             <field name="average_score" readonly="1"/>
+            <field name="score_std_dev" readonly="1"/>
+            <field name="pass_rate" readonly="1"/>
+            <field name="average_attempts_per_quiz" readonly="1"/>
+            <field name="median_completion_time" readonly="1"/>
+            <field name="completion_time_std_dev" readonly="1"/>
+            <field name="top_10_percentile_score" readonly="1"/>
           </group>
         </sheet>
       </form>
@@ -37,10 +51,12 @@
     <field name="model">elearning.analytics</field>
     <field name="arch" type="xml">
       <graph string="eLearning Analytics Overview" type="bar">
-        <field name="course_id"/>
+        <field name="course_id" type="row"/>
         <field name="total_students" type="measure"/>
         <field name="completion_rate" type="measure"/>
+        <field name="dropout_rate" type="measure"/>
         <field name="average_score" type="measure"/>
+        <field name="pass_rate" type="measure"/>
       </graph>
     </field>
   </record>
@@ -51,10 +67,17 @@
     <field name="model">elearning.analytics</field>
     <field name="arch" type="xml">
       <pivot string="Analytics Pivot">
-        <field name="course_id"/>
-        <field name="total_students"/>
-        <field name="completion_rate"/>
-        <field name="average_score"/>
+        <field name="course_id" type="row"/>
+        <field name="total_students" type="measure"/>
+        <field name="completion_rate" type="measure"/>
+        <field name="dropout_rate" type="measure"/>
+        <field name="average_score" type="measure"/>
+        <field name="score_std_dev" type="measure"/>
+        <field name="pass_rate" type="measure"/>
+        <field name="average_attempts_per_quiz" type="measure"/>
+        <field name="median_completion_time" type="measure"/>
+        <field name="completion_time_std_dev" type="measure"/>
+        <field name="top_10_percentile_score" type="measure"/>
       </pivot>
     </field>
   </record>
