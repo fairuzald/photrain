@@ -1,0 +1,28 @@
+<odoo>
+  <record id="view_survey_analytics_tree" model="ir.ui.view">
+    <field name="name">survey.analytics.tree</field>
+    <field name="model">survey.analytics</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="survey_title"/>
+        <field name="question_title"/>
+        <field name="answer_text"/>
+        <field name="value_number"/>
+        <field name="session_date"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="action_survey_analytics" model="ir.actions.act_window">
+    <field name="name">Survey Analytics</field>
+    <field name="res_model">survey.analytics</field>
+    <field name="view_mode">tree</field>
+  </record>
+
+  <menuitem id="menu_survey_analytics_root"
+          name="Survey Analytics"
+          sequence="10"
+          action="action_survey_analytics" />
+
+  <menuitem id="menu_survey_analytics" name="Feedback Insights" parent="menu_survey_analytics_root" action="action_survey_analytics"/>
+</odoo>

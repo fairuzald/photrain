@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- Server Action: define this BEFORE button calls it -->
+  <record id="action_generate_recommendations" model="ir.actions.server">
+    <field name="name">Generate Recommendations</field>
+    <field name="model_id" ref="model_survey_recommendation"/>
+    <field name="binding_model_id" ref="model_survey_recommendation"/>
+    <field name="state">code</field>
+    <field name="code">model.generate_recommendations()</field>
+  </record>
+
+  <!-- Root Menu -->
+  <menuitem id="menu_survey_analytics_root" name="Survey Analytics" sequence="10"/>
+
+  <!-- Action: Tree View for Recommendations -->
+  <record id="view_survey_recommendation_tree" model="ir.ui.view">
+    <field name="name">survey.recommendation.tree</field>
+    <field name="model">survey.recommendation</field>
+    <field name="arch" type="xml">
+      <tree string="Survey Recommendations">
+        <header>
+          <button name="%(action_generate_recommendations)d" type="action" string="Generate Recommendations" class="btn-primary" context="{}"/>
+        </header>
+        <field name="name"/>
+        <field name="recommendation_text"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Form View -->
+  <record id="view_survey_recommendation_form" model="ir.ui.view">
+    <field name="name">survey.recommendation.form</field>
+    <field name="model">survey.recommendation</field>
+    <field name="arch" type="xml">
+      <form string="Survey Recommendation">
+        <header>
+          <button name="%(action_generate_recommendations)d" type="action" string="Generate Recommendations" class="btn-primary" context="{}"/>
+        </header>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="recommendation_text"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Window Action -->
+  <record id="action_survey_recommendation" model="ir.actions.act_window">
+    <field name="name">Recommendations</field>
+    <field name="res_model">survey.recommendation</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- Link to Menu -->
+  <menuitem id="menu_survey_recommendation" name="Recommendations"
+            parent="menu_survey_analytics_root"
+            action="action_survey_recommendation"
+            sequence="20"/>
+</odoo>

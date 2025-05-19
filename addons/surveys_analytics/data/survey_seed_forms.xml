@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- Survey 1: Feedback Pelatihan Fotografi -->
+  <record id="survey_feedback_pelatihan" model="survey.survey">
+    <field name="title">Umpan Balik Pelatihan Fotografi</field>
+  </record>
+
+  <!-- SECTION 1: Profil Responden -->
+  <record id="q1_role" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Apa peran Anda di studio?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="q1a1" model="survey.question.answer">
+    <field name="question_id" ref="q1_role"/>
+    <field name="value">Fotografer</field>
+  </record>
+  <record id="q1a2" model="survey.question.answer">
+    <field name="question_id" ref="q1_role"/>
+    <field name="value">Editor</field>
+  </record>
+  <record id="q1a3" model="survey.question.answer">
+    <field name="question_id" ref="q1_role"/>
+    <field name="value">Asisten</field>
+  </record>
+  <record id="q1a4" model="survey.question.answer">
+    <field name="question_id" ref="q1_role"/>
+    <field name="value">Pemilik Studio</field>
+  </record>
+
+  <record id="q2_experience" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Berapa tahun pengalaman Anda?</field>
+    <field name="question_type">numerical_box</field>
+  </record>
+
+  <record id="q3_focus" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Jenis fotografi apa yang paling Anda tekuni?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="q3a1" model="survey.question.answer"><field name="question_id" ref="q3_focus"/><field name="value">Potret</field></record>
+  <record id="q3a2" model="survey.question.answer"><field name="question_id" ref="q3_focus"/><field name="value">Pernikahan</field></record>
+  <record id="q3a3" model="survey.question.answer"><field name="question_id" ref="q3_focus"/><field name="value">Produk</field></record>
+  <record id="q3a4" model="survey.question.answer"><field name="question_id" ref="q3_focus"/><field name="value">Lainnya</field></record>
+
+  <record id="q4_city" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Kota atau lokasi studio Anda</field>
+    <field name="question_type">text_box</field>
+  </record>
+
+  <!-- SECTION 2: Feedback Pelatihan -->
+  <record id="q5_content" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Seberapa baik isi pelatihannya?</field>
+    <field name="question_type">numerical_box</field>
+  </record>
+  <record id="q6_delivery" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Bagaimana penyampaian dari pelatih?</field>
+    <field name="question_type">numerical_box</field>
+  </record>
+  <record id="q7_relevance" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Apakah pelatihan ini relevan dengan pekerjaan Anda?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="q7a1" model="survey.question.answer"><field name="question_id" ref="q7_relevance"/><field name="value">Ya</field></record>
+  <record id="q7a2" model="survey.question.answer"><field name="question_id" ref="q7_relevance"/><field name="value">Tidak</field></record>
+
+  <record id="q8_valuable" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Hal apa yang paling berharga dari pelatihan ini?</field>
+    <field name="question_type">text_box</field>
+  </record>
+  <record id="q9_suggestions" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Apa yang dapat ditingkatkan?</field>
+    <field name="question_type">text_box</field>
+  </record>
+
+  <!-- SECTION 3: Dampak dan Tindak Lanjut -->
+  <record id="q10_apply" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Apakah Anda akan menerapkan materi pelatihan ini di studio Anda?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="q10a1" model="survey.question.answer"><field name="question_id" ref="q10_apply"/><field name="value">Ya</field></record>
+  <record id="q10a2" model="survey.question.answer"><field name="question_id" ref="q10_apply"/><field name="value">Tidak</field></record>
+
+  <record id="q11_recommend" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Apakah Anda akan merekomendasikan pelatihan ini?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="q11a1" model="survey.question.answer"><field name="question_id" ref="q11_recommend"/><field name="value">Ya</field></record>
+  <record id="q11a2" model="survey.question.answer"><field name="question_id" ref="q11_recommend"/><field name="value">Tidak</field></record>
+
+  <record id="q12_next" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelatihan"/>
+    <field name="title">Pelatihan apa lagi yang Anda inginkan di masa depan?</field>
+    <field name="question_type">text_box</field>
+  </record>
+
+  <!-- Survey 2: Umpan Balik Pelanggan Studio Fotografi -->
+  <record id="survey_feedback_pelanggan" model="survey.survey">
+    <field name="title">Umpan Balik Sesi Fotografi (Pelanggan)</field>
+  </record>
+
+  <!-- SECTION 1: Profil Pelanggan -->
+  <record id="cust_q1_session_type" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Jenis sesi apa yang Anda pesan?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="cust_q1a1" model="survey.question.answer"><field name="question_id" ref="cust_q1_session_type"/><field name="value">Potret</field></record>
+  <record id="cust_q1a2" model="survey.question.answer"><field name="question_id" ref="cust_q1_session_type"/><field name="value">Pernikahan</field></record>
+  <record id="cust_q1a3" model="survey.question.answer"><field name="question_id" ref="cust_q1_session_type"/><field name="value">Keluarga</field></record>
+  <record id="cust_q1a4" model="survey.question.answer"><field name="question_id" ref="cust_q1_session_type"/><field name="value">Produk</field></record>
+
+  <record id="cust_q2_channel" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Bagaimana Anda mengetahui layanan kami?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="cust_q2a1" model="survey.question.answer"><field name="question_id" ref="cust_q2_channel"/><field name="value">Instagram</field></record>
+  <record id="cust_q2a2" model="survey.question.answer"><field name="question_id" ref="cust_q2_channel"/><field name="value">Teman</field></record>
+  <record id="cust_q2a3" model="survey.question.answer"><field name="question_id" ref="cust_q2_channel"/><field name="value">Iklan</field></record>
+  <record id="cust_q2a4" model="survey.question.answer"><field name="question_id" ref="cust_q2_channel"/><field name="value">Langsung datang</field></record>
+
+  <record id="cust_q3_first_time" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Apakah ini pertama kali Anda menggunakan layanan kami?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="cust_q3a1" model="survey.question.answer"><field name="question_id" ref="cust_q3_first_time"/><field name="value">Ya</field></record>
+  <record id="cust_q3a2" model="survey.question.answer"><field name="question_id" ref="cust_q3_first_time"/><field name="value">Tidak</field></record>
+
+  <record id="cust_q4_age" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Kelompok usia Anda</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="cust_q4a1" model="survey.question.answer"><field name="question_id" ref="cust_q4_age"/><field name="value">Di bawah 18</field></record>
+  <record id="cust_q4a2" model="survey.question.answer"><field name="question_id" ref="cust_q4_age"/><field name="value">18–25</field></record>
+  <record id="cust_q4a3" model="survey.question.answer"><field name="question_id" ref="cust_q4_age"/><field name="value">26–40</field></record>
+  <record id="cust_q4a4" model="survey.question.answer"><field name="question_id" ref="cust_q4_age"/><field name="value">41–60</field></record>
+  <record id="cust_q4a5" model="survey.question.answer"><field name="question_id" ref="cust_q4_age"/><field name="value">60+</field></record>
+
+  <record id="cust_q5_city" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Kota Anda</field>
+    <field name="question_type">text_box</field>
+  </record>
+
+  <!-- SECTION 2: Pengalaman & Fotografer -->
+  <record id="cust_q6_satisfaction" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Seberapa puas Anda dengan sesi foto?</field>
+    <field name="question_type">numerical_box</field>
+  </record>
+  <record id="cust_q7_photographer" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Seberapa profesional dan ramah fotografernya?</field>
+    <field name="question_type">numerical_box</field>
+  </record>
+  <record id="cust_q8_duration" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Apakah durasi sesi cukup?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="cust_q8a1" model="survey.question.answer"><field name="question_id" ref="cust_q8_duration"/><field name="value">Ya</field></record>
+  <record id="cust_q8a2" model="survey.question.answer"><field name="question_id" ref="cust_q8_duration"/><field name="value">Tidak</field></record>
+
+  <record id="cust_q9_issues" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Apakah ada masalah selama sesi?</field>
+    <field name="question_type">text_box</field>
+  </record>
+
+  <!-- SECTION 3: Hasil Foto -->
+  <record id="cust_q10_result" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Seberapa puas Anda dengan hasil foto?</field>
+    <field name="question_type">numerical_box</field>
+  </record>
+  <record id="cust_q11_like" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Apa yang paling Anda sukai dari foto tersebut?</field>
+    <field name="question_type">text_box</field>
+  </record>
+  <record id="cust_q12_share" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Apakah Anda bersedia membagikan foto Anda di media sosial?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="cust_q12a1" model="survey.question.answer"><field name="question_id" ref="cust_q12_share"/><field name="value">Ya</field></record>
+  <record id="cust_q12a2" model="survey.question.answer"><field name="question_id" ref="cust_q12_share"/><field name="value">Tidak</field></record>
+
+  <record id="cust_q13_improve" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Apa yang bisa kami perbaiki untuk sesi mendatang?</field>
+    <field name="question_type">text_box</field>
+  </record>
+
+  <!-- SECTION 4: Ketertarikan & Saran Lanjut -->
+  <record id="cust_q14_rebook" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Apakah Anda ingin memesan sesi lagi di masa depan?</field>
+    <field name="question_type">simple_choice</field>
+  </record>
+  <record id="cust_q14a1" model="survey.question.answer"><field name="question_id" ref="cust_q14_rebook"/><field name="value">Ya</field></record>
+  <record id="cust_q14a2" model="survey.question.answer"><field name="question_id" ref="cust_q14_rebook"/><field name="value">Tidak</field></record>
+
+  <record id="cust_q15_future" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Jenis sesi apa yang Anda harapkan tersedia di masa depan?</field>
+    <field name="question_type">text_box</field>
+  </record>
+
+  <record id="cust_q16_comment" model="survey.question">
+    <field name="survey_id" ref="survey_feedback_pelanggan"/>
+    <field name="title">Komentar untuk tim atau fotografer kami</field>
+    <field name="question_type">text_box</field>
+  </record>
+
+</odoo>
