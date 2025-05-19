@@ -9,7 +9,16 @@ class ElearningAnalytics(models.Model):
     completion_rate = fields.Float(string='Completion Rate (%)', compute='_compute_metrics', store=True)
     average_score   = fields.Float(string='Average Quiz Score (%)', compute='_compute_metrics', store=True)
 
-    @api.depends('course_id')
+    @api.depends(
+  'course_id.partner_ids',
+  'course_id.slide_partner_ids.completed',
+  'course_id.slide_ids.question_ids',
+  'course_id.slide_partner_ids.quiz_attempts_count',
+  'course_id.slide_ids.quiz_first_attempt_reward',
+  'course_id.slide_ids.quiz_second_attempt_reward',
+  'course_id.slide_ids.quiz_third_attempt_reward',
+  'course_id.slide_ids.quiz_fourth_attempt_reward',
+)
     def _compute_metrics(self):
         for rec in self:
             Course   = rec.course_id
